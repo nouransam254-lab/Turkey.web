@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const table = document.getElementById(tableId);
         if (btn && table) {
             btn.onclick = function(e) {
-                e.preventDefault(); // بيمنع النط عند اللوجو
+                e.preventDefault(); // بيمنع الرجوع عند اللوجو
                 if (table.style.display === "none" || table.style.display === "") {
                     table.style.display = "table";
                     this.textContent = hideTxt;
@@ -22,32 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
     setupToggle("showCitiesBtn", "citiesTable", "Show Cities", "Hide Cities");
     setupToggle("showWordsBtn", "wordsTable", "Show Words", "Hide Words");
 
-    // 3. كود زرار الحجز (Booking)
-    const bookBtn = document.getElementById("bookBtn");
-    const bookingModal = document.getElementById("bookingModal");
-    if (bookBtn && bookingModal) {
-        bookBtn.onclick = function(e) {
-            e.preventDefault();
-            bookingModal.style.display = "block";
-        };
-    }
-
-    // 4. حركة صور الأكل (لو الـ CSS ممسوح)
-    const images = document.querySelectorAll(".food-box img, .food-item img, .hero-container img");
-    images.forEach(img => {
-        img.style.transition = "transform 0.4s ease";
-        img.onmouseover = () => img.style.transform = "scale(1.1)";
-        img.onmouseout = () => img.style.transform = "scale(1)";
-    });
-
-});
-
-
-
+  
 
 // 1. تعريف العناصر
 const modal = document.getElementById('bookingModal');
-const openBtn = document.getElementById('openBooking'); // ده الـ ID اللي في زرار الـ Hero عندك
+const openBtn = document.getElementById('openBooking');  
 const closeBtn = document.getElementById('closeModal');
 const form = document.getElementById('bookingForm');
 
@@ -74,3 +53,5 @@ form.onsubmit = function(e) {
     alert("Booking Successful! We will contact you soon.");
     modal.style.display = "none";
 }
+
+});
